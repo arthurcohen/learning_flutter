@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
 import 'user.dart';
 import 'vistoria_card.dart';
+import 'bottom_app_bar.dart';
 
-class LearningApp extends StatefulWidget {
-  final Widget child;
-
-  LearningApp({Key key, this.child}) : super(key: key);
-
-  _LearningAppState createState() => _LearningAppState();
-}
-
-class _LearningAppState extends State<LearningApp> {
-  var _currentTab = 0;
+class LearningApp extends StatelessWidget {
+  final _currentTab = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +19,7 @@ class _LearningAppState extends State<LearningApp> {
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 Text(
-                  'SurveyMob',
+                  'SurveyMob1',
                   style: TextStyle(
                     fontSize: 50,
                     fontWeight: FontWeight.w200,
@@ -35,7 +28,7 @@ class _LearningAppState extends State<LearningApp> {
                   ),
                 ),
                 User(_currentTab),
-                VistoriaCard(),
+                VistoriaCard()
               ],
             ),
           ),
@@ -46,33 +39,36 @@ class _LearningAppState extends State<LearningApp> {
           onPressed: () {},
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        bottomNavigationBar: BottomAppBar(
-          shape: CircularNotchedRectangle(),
-          notchMargin: 4,
-          color: Color.fromRGBO(0x33, 0x33, 0x99, 1),
-          child: new Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        bottomNavigationBar: CustomBottomAppBar(),
+        drawer: Drawer(
+          child: ListView(
             children: <Widget>[
-              IconButton(
-                icon: Icon(Icons.menu),
-                color: Colors.white,
-                onPressed: () {},
+              DrawerHeader(
+                child: Text(
+                  'SurveyMob',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w300),
+                ),
+                decoration:
+                    BoxDecoration(color: Color.fromRGBO(0x33, 0x33, 0x99, 1)),
               ),
-              IconButton(
-                icon: Icon(Icons.home),
-                color: Colors.white,
-                onPressed: () {},
+              ListTile(
+                title: Text('Vistorias'),
+                onTap: () {},
               ),
-              IconButton(
-                icon: Icon(Icons.person),
-                color: Colors.white,
-                onPressed: () {},
+              ListTile(
+                title: Text('Sincronizar'),
+                onTap: () {},
               ),
-              IconButton(
-                icon: Icon(Icons.exit_to_app),
-                color: Colors.white,
-                onPressed: () {},
+              ListTile(
+                title: Text('Contato'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text('Contato'),
+                onTap: () {},
               ),
             ],
           ),

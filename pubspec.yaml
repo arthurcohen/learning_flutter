@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
 
   charts_flutter: ^0.6.0
+  flare_flutter: ^1.3.3
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +48,7 @@ flutter:
 
   assets:
     - images/profile.jpeg
+    - images/4c logo.flr
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
